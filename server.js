@@ -14,6 +14,12 @@ app.use(express.json());
 app.use(cors());
 app.use(morgan("dev"));
 
+//routers
+import userRouter from "./src/routers/userRouter.js";
+// user router to handle user registration and login
+app.use("/api/v1/user", userRouter);
+//transaction router to handle all transaction related CRUD operation
+
 //uncaught touter rewuest
 app.use("*", (req, res, next) => {
   const error = {
@@ -42,5 +48,5 @@ app.use((error, req, res, next) => {
 app.listen(PORT, (error) => {
   error
     ? console.log(error)
-    : console.log(`server is running ay http://localhost: ${PORT}`);
+    : console.log(`server is running at http://localhost: ${PORT}`);
 });

@@ -1,3 +1,16 @@
 ### checking if the server is live
 
 GET http://localhost:8000/
+
+
+###================= User API
+
+POST http://localhost:8000/api/v1/user
+Content-Type: application/json
+
+{
+    "name":"Arjun",
+    "email" : "amil@acom",
+    "pin": 1234
+
+}
